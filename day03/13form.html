@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Day3_폼form</title>
+    <link rel="stylesheet" href="13member.css">
+        
+</head>
+<body>
+    <!-- 사용자 입력을 처리하는 form 작성 (form,작성양식)
+    form 태그 내에 입력요소 태그(input,button,select들을 포함시켜서 작성해야합니다.
+    작성완료된 입력을 서버로 전달합니다. -->
+        <!--일반적인 목적으로 사용되는 블럭요소 : div, 인라인요소 : span  -->
+    <div style="width :70%; margin: auto; max-width: 600px;">
+        <h3 >회원가입</h3>
+    <form action="">
+    <table style="width:100%">
+        <!-- 부모 요소인 div 크기 기준 100% -->
+        <!-- lable 태그는 연관된 텍스트(for속성)를 클릭하면 입력요소(id)가 포커스를 갖게 할 수 있습니다. -->
+        <tr>
+            <td><label for="lblname" class="title mpt">이름</label></td>
+            <!-- 입력요소 태그에는 값을 식별하기 위한 속성 name 값이 꼭 필요합니다. -->
+            <td><input type="text" name="name" id="lblname"></td>
+        </tr>
+        <tr>
+            <td> <label for="lblpass"class="title mpt">패스워드</label></td>
+            <td><input type="password" name="password" minlength="4" maxlength="10" id="lblpass"></td>
+        </tr>
+        <tr>
+            <td> <label for="lblemail"class="title mpt">이메일</label></td>
+            <td><input type="email" name="'email" id="lblemail"></td>
+        </tr>
+        <tr>
+            <td> <label for="lblage"class="title mpt">나이</label> </td>
+            <td><input type="number" name="age" value="19" min="15" max="99" id="lblage"></td>
+        </tr>
+        <tr>
+            <td > <label for=""class="title mpt">지역(주소)</label></td>
+            <td><select name="addr" class="title"id="lbladdr">
+                
+                <option value="서울">서울</option>
+                <option value="인천">인천</option>
+                <option value="">부산</option>
+                <option value="">창원</option>
+                <option value="">대구</option>
+            </select>
+
+            </td>
+        </tr>
+        <tr>
+            <td> <label for=""class="title">성별</label> </td>
+            <td>
+                <!-- 옵션 버튼 여러 항목중 하나 선택가능 -->
+                <input type="radio" name="'gender" value="male" id="lblmale">
+                <label for="lblmale" class="mpt">남성</label>
+                <input type="radio" name="'gender" value="femal" id="lblfemale">
+                <label for="lblfemale" class="mpt" >여성</label>
+                <input type="radio" name="'gender" 
+                    checked="checked"    value="unknown" id="lblunk">
+                    <label for="lblunk" class="mpt">모름</label> 
+
+            </td>
+        </tr>
+        <tr>
+            <td><label for="" class="title">취미</label></td>
+            <td>
+                <!-- 체크박스 : 다중선택가능 name 속성은 동일한 값. 서버는 배열로 처리 -->
+                <input type="checkbox" name="hobby" value="축구" id="축구">
+                <label for="축구" class="mpt">축구</label> 
+                <input type="checkbox" name="hobby" value="농구" id="농구">
+                <label for="농구" class="mpt">농구</label>
+                <input type="checkbox" name="hobby" value="오래달리기" id="오래달리기">
+                <label for="오래달리기" class="mpt">오래달리기</label> 
+                <input type="checkbox" name="hobby" value="수영" id="수영">
+                <label for="수영" class="mpt">수영</label> 
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <!-- input은 type생략하면 text -->
+                <!-- submit이 서버로 입력데이터를 전송(제출) -->
+                <!-- button은 기본동작이 submit -->
+                <!-- 
+                    
+                    <input type="button" value="버튼">
+                    <input type="submit" value="제출">
+                    <input type="reset" value="초기화">
+                -->
+                <button>가입하기</button>
+                <button type="reset">다시쓰기</button>
+            </td>
+        </tr>
+    </table>
+</form>
+</div>
+<!-- 실행 예시 
+http://172.30.1.51:5501/day03/13form.html?name=%EC%9D%B4%EC%A4%80%EC%97%BD&password=1234&%27email=mwy0043%40naver.com&age=30 
+?뒤에 사용자 입력항목들&기호로 연결되어 하나의 문자열로 추가
+입력항목은 name 속성값이 key, 사용자가 입력한 것은 value
+뒤에 query string 보일때는 주로 조회 동작,입력한 값이 url 안보일때 데이터를 저장하는 동작
+ method="post" 
+value 가 한글 또는 기호가 포함될때 utf-8 인코딩-->
+</body>
+</html>

@@ -1,0 +1,60 @@
+/* css 스타일을 별도 파일로 작성합니다
+사용하는 html 문서에서는 link 태그로 이파일을 설정 */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100&display=swap');
+*{
+    font-family: 'Roboto Mono', monospace;
+}
+table{
+    
+    border-top: 3px solid gray;
+    border-bottom: 3px solid gray;
+}
+td{
+    padding: 5px;
+}
+/* tr>td:nth-child(1){
+    text-align: center;
+    border-radius: 30px;
+    background-color:rgb(148, 52, 148);
+    color: aliceblue;
+} */
+label.title{
+    background-color: rgb(130, 199, 19);
+    border-radius: 10px;
+    color: blue;
+    width: 80%;
+    display: inline-block;
+/* 인라인 요소는 너비가 적용이 안됩니다. block요소처럼 너비높이가 적용되게 display 변경 */
+padding:10px;
+}
+
+button{
+    padding: 7px 15px;
+    margin: 7px;
+    background-color: rgb(194, 14, 11);
+    color: wheat;
+    font-size: 1.1em;
+    border-radius: 4px;
+    cursor: pointer;
+    
+
+}
+/* pseudo (의사)*/
+button:hover{
+    background-color: rgb(14, 152, 113);
+}
+label.mpt{
+    cursor: pointer;
+}
+tr:last-child>td {
+    background-color: wheat;
+    text-align: center;
+}
+input[type=text],input[type=password],input[type=email]{
+width: 60%;
+}
+input,select{
+    padding: 6px;
+    border-radius: 10px;
+    border: 1px solid gray;
+}
